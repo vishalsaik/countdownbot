@@ -11,6 +11,6 @@ client = tweepy.Client(consumer_key=consumer_key,
                     consumer_secret=consumer_secret,
                     access_token=access_token,
                     access_token_secret=access_token_secret)
-days = date(2026,3,26) - date.today() - timedelta(days = 1)
+days = date(2026,3,26) - date.today()
 cd = dumps(days.days, default=str)
 response = client.create_tweet(text=cd)
