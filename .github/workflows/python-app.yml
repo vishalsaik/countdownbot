@@ -2,7 +2,7 @@ name: Run Countdown Bot (Windows)
 on:
   # Your daily scheduled trigger (3:08 AM IST)
   schedule:
-    - cron: '27 18 * * *' 
+    - cron: '30 18 * * *' 
   
   # Manual trigger for immediate testing
   workflow_dispatch:     
