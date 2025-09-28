@@ -34,8 +34,8 @@ jobs:
     # 4. Run the bot and pass secrets
     - name: Run the bot and Post Tweet
       run: |
-        $currentTime = Get-Date -Format "yyyy-MM-dd HH:mm:ss (UTC)"
-        Write-Output "Running at $currentTime"
+        python -m pip install --upgrade pip
+        pip install tweepy pytz  # Ensure pytz is installed
         python main.py
       env:
         # These reference the secrets you saved in GitHub
