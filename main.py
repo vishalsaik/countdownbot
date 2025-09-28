@@ -12,8 +12,15 @@ access_token_secret = os.environ['TWITTER_ACCESS_TOKEN_SECRET']
 # Set IST timezone
 ist = pytz.timezone('Asia/Kolkata')
 
-# Get current date in IST
-today = ist.localize(datetime.now()).date()
+# Get current datetime in IST and convert to date
+now = datetime.now(pytz.UTC)  # Start with UTC time
+ist_now = now.astimezone(ist)  # Convert to IST
+today = ist_now.date()
+
+# Debug output
+print(f"UTC Time: {now}")
+print(f"IST Time: {ist_now}")
+print(f"Today’s Date (IST): {today}")
 
 # Target release date
 release_date = datetime(2026, 3, 26).date()
