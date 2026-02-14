@@ -23,7 +23,7 @@ print(f"IST Time: {ist_now}")
 print(f"Today’s Date (IST): {today}")
 
 # Target release date
-release_date = datetime(2026, 6, 25).date()
+release_date = datetime(2026, 8, 21).date()
 
 # Calculate days left
 days_left = (release_date - today).days
