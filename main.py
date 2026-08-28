@@ -1,3 +1,4 @@
+import sys
 import tweepy
 import os
 from datetime import datetime
@@ -23,12 +24,16 @@ print(f"IST Time: {ist_now}")
 print(f"Today’s Date (IST): {today}")
 
 # Target release date
-release_date = datetime(2026, 8, 21).date()
+release_date = datetime(2026, 9, 24).date()
 
 # Calculate days left
 days_left = (release_date - today).days
 
-# Create tweet with just the number
+# Stop posting once release day has passed; day 0 (release day) still tweets.
+if days_left < 0:
+    print(f"Release day has passed ({days_left} days). Nothing to tweet.")
+    sys.exit(0)
+
 tweet_text = str(days_left)
 
 # Create tweet
