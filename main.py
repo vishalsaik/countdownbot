@@ -34,7 +34,7 @@ if days_left < 0:
     print(f"Release day has passed ({days_left} days). Nothing to tweet.")
     sys.exit(0)
 
-tweet_text = str(days_left)
+tweet_text = f"{days_left} Days to go"
 
 # Create tweet
 client = tweepy.Client(
