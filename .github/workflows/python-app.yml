@@ -1,4 +1,4 @@
-name: Run Countdown Bot (Windows)
+name: Run Countdown Bot
 on:
   # Daily scheduled trigger (00:00 IST = 18:30 UTC)
   schedule:
@@ -9,8 +9,8 @@ on:
 
 jobs:
   build:
-    # --- CHANGED TO WINDOWS RUNNER ---
-    runs-on: windows-latest
+    # Ubuntu runners provision fastest, which keeps scheduled runs close to the cron time
+    runs-on: ubuntu-latest
     
     steps:
     
